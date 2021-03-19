@@ -1,0 +1,30 @@
+﻿@using StockTracking.Models.Entity
+@model List<Sales>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Product</th>
+        <th>Employee</th>
+        <th>Customer</th>
+        <th>Price</th>
+        <th>Date</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.id</td>
+            <td>@x.Products.name</td>
+            <td>@x.Employees.name @x.Employees.surname</td>
+            <td>@x.Customers.name @x.Customers.surname</td>
+            <td>@x.price</td>
+            <td>@x.date</td>
+        </tr>
+    }
+</table>
+<a href="/Sale/NewSale/" class="btn btn-primary">New Sale</a>
+

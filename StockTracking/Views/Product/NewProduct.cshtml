@@ -1,0 +1,30 @@
+﻿@model StockTracking.Models.Entity.Products
+@{
+    ViewBag.Title = "NewProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <h2>Add New Product</h2>
+    <br />
+    <label>Product Name :</label>
+    @Html.TextBoxFor(x => x.name, new { @class = "form-control" })
+    <br />
+    <label>Brand :</label>
+    @Html.TextBoxFor(x => x.brand, new { @class = "form-control" })
+    <br />
+    <label>Stock :</label>
+    @Html.TextBoxFor(x => x.stock, new { @class = "form-control" })
+    <br />
+    <label>Purchase Price :</label>
+    @Html.TextBoxFor(x => x.puchase_price, new { @class = "form-control" })
+    <br />
+    <label>Sale Price :</label>
+    @Html.TextBoxFor(x => x.sale_price, new { @class = "form-control" })
+    <br />
+    <label>Category :</label>
+    @Html.DropDownListFor(x => x.Categories.id, (List<SelectListItem>)ViewBag.dropdownCategory, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Save</button>
+</form>
+

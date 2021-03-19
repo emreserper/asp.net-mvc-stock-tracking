@@ -1,0 +1,46 @@
+﻿@model StockTracking.Models.Entity.Admin
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+
+    New Admin
+
+</button>
+
+<div class="modal" id="Modal1">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">New Admin Panel</h2>
+            </div>
+            <form method="post" action="/Admin/NewAdmin">
+                <div class="modal-body">
+                    <label>
+                        User Name
+                    </label>
+                    @Html.TextBoxFor(m => m.user, new { @class = "form-control" })
+                    <br />
+                    <label>
+                        Password
+                    </label>
+                    @Html.TextBoxFor(m => m.password, new { @class = "form-control" })
+                    <br />
+                    <button type="submit" class="btn btn-info">Save</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+

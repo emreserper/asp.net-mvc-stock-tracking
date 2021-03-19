@@ -1,0 +1,24 @@
+﻿@model StockTracking.Models.Entity.Sales
+@{
+    ViewBag.Title = "NewSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <h2>Add New Sale</h2>
+    <br />
+    <label>Product  :</label>
+    @Html.DropDownListFor(x => x.Products.id, (List<SelectListItem>)ViewBag.drop1, new { @class = "form-control" })
+    <br />
+    <label>Employee :</label>
+    @Html.DropDownListFor(x => x.Employees.id, (List<SelectListItem>)ViewBag.drop, new { @class = "form-control" })
+    <br />
+    <label>Customer :</label>
+    @Html.DropDownListFor(x => x.Customers.id, (List<SelectListItem>)ViewBag.drop2, new { @class = "form-control" })
+    <br />
+    <label>Price :</label>
+    @Html.TextBoxFor(x => x.price, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Sell</button>
+</form>
+

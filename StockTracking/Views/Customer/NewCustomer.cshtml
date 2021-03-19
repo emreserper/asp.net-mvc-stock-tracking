@@ -1,0 +1,27 @@
+﻿@model StockTracking.Models.Entity.Customers
+@{
+    ViewBag.Title = "NewCustomer";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form method="post">
+    <h2>Add New Customer</h2>
+    <br />
+    <label>Customer Name :</label>
+    @Html.TextBoxFor(x => x.name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.name, "", new { @style = "color:red" })
+    <br />
+    <label>Surname :</label>
+    @Html.TextBoxFor(x => x.surname, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.surname, "", new { @style = "color:red" })
+    <br />
+    <label>City :</label>
+    @Html.TextBoxFor(x => x.city, new { @class = "form-control" })
+    <br />
+    <label>Balance :</label>
+    @Html.TextBoxFor(x => x.balance, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Save</button>
+</form>
+
